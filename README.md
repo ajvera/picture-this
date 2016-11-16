@@ -19,4 +19,4 @@ Picture-this is a web-based photo album application that will allow users to cre
 
 ##Examples
 
-#Contributing Lisence
+##Contributing Lisence
