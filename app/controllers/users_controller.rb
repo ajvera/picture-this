@@ -15,12 +15,14 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 
 		if @user.save
-			redirect_to user_path(@user.id)
+			redirect_to user_path(@user)
 		else
+			@errors = @user.errors.full_messages
 			render :new
-		end
+		end 
 
-	end
+	end 
+
 
 	private
 
