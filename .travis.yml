@@ -1,7 +1,0 @@
-language: ruby
-sudo: false 
-rvm:
-  - 2.2.2
-before-script:
-  -bundle update
-  -bundle exec rake db:setup
