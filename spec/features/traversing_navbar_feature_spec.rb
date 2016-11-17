@@ -1,5 +1,6 @@
 # require 'rails_helper'
 
+
 # #Test navbar from home page, profile page, and views
 
 # feature "traversing the nav bar:" do
