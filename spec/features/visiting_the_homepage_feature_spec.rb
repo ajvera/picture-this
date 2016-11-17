@@ -1,21 +1,23 @@
 require 'rails_helper'
 
 feature "visiting the homepage" do
-  xscenario "the user sees a login screen" do
+  before :all do
+	  User.destroy_all
+	  user = User.create!(first_name: "Aloe", last_name:"Vera", username:"alvera", email:"aloe@ve.ra",password:"password")
+  end
+  scenario "the user sees a login screen" do
     visit "/"
-
-    within(".recent-games") do
-      expect(page).to have_content most_recent_game.user_throw
-      click_link("Show")
-    end
-
-    expect(page).to have_current_path game_path(most_recent_game)
+    expect(page).to have_content('Email Password')
+    expect(page).to have_current_path root_path
   end
 
-  xscenario "the user can login" do
+  scenario "the user can login" do
     visit "/"
-    click_link("New Game")
-    expect(page).to have_current_path(new_game_path)
+    fill_in('Email', with: 'aloe@ve.ra')
+    fill_in('Password', with: 'password')
+    click_button("Login")
+
+    expect(page).to have_current_path user_path(User.find_by(email:'aloe@ve.ra'))
 
   end
 end
