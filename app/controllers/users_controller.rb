@@ -3,9 +3,9 @@ class UsersController < ApplicationController
 	def index
 	end
 
-  def show
-    @user = User.find_by(id: params[:id])
-  end
+	def show
+	  @user = User.find_by(id:params[:id])
+	end
 
 	def new
 		@user = User.new
@@ -15,12 +15,13 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 
 		if @user.save
-			redirect_to user_path(@user.id)
+			redirect_to user_path(@user)
 		else
+			@errors = @user.errors.full_messages
 			render :new
-		end
+		end 
 
-	end
+	end 
 
 	private
 

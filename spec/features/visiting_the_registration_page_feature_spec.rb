@@ -1,16 +1,40 @@
-# require 'rails_helper'
+require 'rails_helper'
 
-# feature "visiting the registration page" do 
-# 	context "when new user registers" do 
+context "visiting the registration page" do 
 	
-# 	new_user = User.create!(first_name: "foo", last_name: "bar", username: "foobar", email: "foo@bar.com", password: "password")
+	before :all do 
+		User.destroy_all
+	end 
 
-# 	visit "/users/new"
+		scenario "the user registers and is redirected to their profile page" do 
 
-# 	within(".form-group")
-# 	end 
 
-	
-# 	end 
+			visit "/users/new"
 
-# end 
+			fill_in('First name', with: 'foo')
+			fill_in('Last name', with: 'bar')
+			fill_in('Username', with: 'foobar')
+			fill_in('Email', with: 'foo@bar.com')
+			fill_in('Password', with: 'password')
+
+			click_button 'Create User'
+
+			expect(page).to have_current_path user_path(User.last)
+
+		end 
+	end 
+
+	context "when user registration fails" do 
+		scenario "when user does not supply all necessary fields for registration" do 
+			user = User.new(first_name: "bar", last_name: "foo", password: "password")
+
+			visit "/users/new"
+
+			click_button 'Create User'
+
+			expect(page).to have_text("can't be blank")
+
+		end 
+	end 
+
+
