@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
 
 	def new
+    p "************"
+    p current_user
+    p "************"
 	end
 
 	def create
@@ -11,7 +14,7 @@ class SessionsController < ApplicationController
     end
 
   def destroy
-    session.delete(:user_id)
+    session.delete(:current_user_id)
     @current_user = nil
     redirect_to root_url, :notice => "Logged Out!"
   end

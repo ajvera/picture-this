@@ -19,10 +19,16 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to_if(current_user.nil?, "Login", users_new_path)  %></li>
-        <li><%= link_to_if(current_user.nil?, "Register", sessions_new_path)  %></li>
-        <li><%= link_to_if(current_user, "current_user.username", users_path) %></li>
-        <li><%= link_to_if(current_user, "Logout", sessions_delete_path, method: :delete) %></li>
+        <li><%= link_to_if(current_user == nil, "Login", new_session_path)  %></li>
+        <li><%= link_to_if(current_user == nil, "Register", new_user_path)  %></li>
+
+        <% if current_user != nil %>
+          <li><%= link_to("#{current_user.username}", user_path(current_user)) %></li>
+          <li><%= link_to("Logout", session_path(session[:current_user_id]), method: :delete) %></li>
+        <% end %>
+
+
+
       </ul>
     </div>
   </div>
