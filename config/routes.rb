@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   post 'users' => "users#create"
 
-  get 'users/:id' => "users#show"
+  get 'users/:id' => "users#show", as: 'users_show'
+
+  get 'sessions/new' => "sessions#new", as: 'sessions_new'
 
 end
