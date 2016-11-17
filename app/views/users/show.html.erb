@@ -8,7 +8,11 @@
   <div class="panel panel-default">
     <div class="panel-heading"><%= album.name %></div>
     <div class="panel-body">
+      <% if album.pictures %>
       <%= album.pictures.first %>
+      <% else %>
+      <%=  %>
+      <% end %>
     </div>
   </div>
   <% end %>
