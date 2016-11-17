@@ -64,6 +64,7 @@ GEM
       aws-sdk-core (= 2.6.23)
     aws-sigv4 (1.0.0)
     bcrypt (3.1.11)
+    bootstrap_form (2.5.2)
     builder (3.2.2)
     byebug (9.0.6)
     capybara (2.10.1)
@@ -216,6 +217,7 @@ DEPENDENCIES
   aws-sdk
   aws-sdk-rails
   bcrypt (~> 3.1.7)
+  bootstrap_form
   byebug
   capybara
   coffee-rails (~> 4.2)
