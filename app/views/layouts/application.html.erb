@@ -12,10 +12,13 @@
   </head>
 
   <body>
-    <%= link_to_if(current_user.nil?, "Login", users_new_path)  %>
-    <%= link_to_if(current_user.nil?, "Register", sessions_new_path)  %>
-    <%= link_to_if(current_user, "current_user.username", users_show_path) %>
-    <%= link_to_if(current_user, "Logout", sessions_delete_path) %>
+    
+    <%= link_to_if(current_user.nil?, "Login", new_session_path)  %>
+    <%= link_to_if(current_user.nil?, "Register", new_user_path)  %>
+    <%= link_to_if(current_user, "current_user.username", user_path(current_user.id) %>
+    <%= link_to_if(current_user, "Logout", session_path(session[current_user.id]), method: :delete %>
+    
     <%= yield %>
+    
   </body>
 </html>
