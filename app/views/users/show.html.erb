@@ -14,6 +14,8 @@
         <th><%= album.name%></th>
       </tr>
     </thead>
+  <% end %>
+  <% @user.albums.each do |album| %>
     <tbody>
       <tr>
         <td><%= album.pictures.first %></td>
