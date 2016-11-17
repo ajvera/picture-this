@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   get 'users/:id' => "users#show"
 
+  root '/' => "sessions#new"
+
 end
