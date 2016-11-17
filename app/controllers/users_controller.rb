@@ -1,5 +1,12 @@
 class UsersController < ApplicationController
 
+	def index
+	end
+
+	def show
+	  @user = User.find_by(id:params[:id])
+	end
+
 	def new
 		@user = User.new
 	end 
@@ -10,13 +17,13 @@ class UsersController < ApplicationController
 		if @user.save
 			redirect_to user_path(@user.id)
 		else
+			@errors = @user.errors.full_messages
 			render :new
 		end 
 
 	end 
 
 	
-
 	private
 
 	def user_params
