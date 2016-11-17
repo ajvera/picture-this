@@ -13,7 +13,7 @@ feature "traversing the nav bar:" do
   scenario "unlogged in user can click register link to render new sessions view" do
     click_link('Register')
 
-    expect(page).to have_current_path new_sesion_path
+    expect(page).to have_current_path new_user_path
   end
 
   scenario "unlogged in user can click log in link to render new users view" do
@@ -26,8 +26,8 @@ feature "traversing the nav bar:" do
 
     visit '/'
 
-    expect(page).to have_link("MG", href: user_path)
-    expect(page).to have_link("Sign Out", href: session_path, method: :delete)
+    expect(page).to have_link("MG", href: user_path(current_user))
+    expect(page).to have_link("Sign Out", href: session_path(session[:current_user_id]), method: :delete)
   end
 
   scenario "a logged in user can click their profile link to render user's profile page" do
@@ -35,7 +35,7 @@ feature "traversing the nav bar:" do
     session[:current_user_id] = user.id
 
     click_link('MG')
-    expect(page).to have_current_path user_path
+    expect(page).to have_current_path user_path(current_user)
   end
 
   scenario "a logged in user can click the logout link to delete their session" do

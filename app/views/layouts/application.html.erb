@@ -19,8 +19,10 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to_if(current_user == nil, "Login", new_session_path)  %></li>
-        <li><%= link_to_if(current_user == nil, "Register", new_user_path)  %></li>
+        <% if current_user == nil %>
+        <li><%= link_to("Login", new_session_path)  %></li>
+        <li><%= link_to("Register", new_user_path)  %></li>
+        <% end %>
 
         <% if current_user != nil %>
           <li><%= link_to("#{current_user.username}", user_path(current_user)) %></li>

@@ -2,13 +2,11 @@ Rails.application.routes.draw do
 
   root "sessions#new"
 
-  resources :users, only: [:new, :create, :show]
+ resources :users, only: [:new, :create, :show] do
+     resources :albums, shallow: true do
+         resources :photos, shallow: true
+     end
+ end
 
-  get 'users/:id/albums/new' => "albums#new", as: 'users_albums_new'
-
-  post '/sessions' => "sessions#create"
-
-  get '/sessions' => "sessions#new"
-
-
+  resources :sessions, only: [:new, :create, :destroy ]
 end
