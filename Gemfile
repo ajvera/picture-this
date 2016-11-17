@@ -29,8 +29,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'aws-sdk'
 gem 'aws-sdk-rails'
+gem 'bootstrap_form'
 
-# Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do

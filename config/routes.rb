@@ -9,4 +9,10 @@ Rails.application.routes.draw do
 
   get 'users/:id/albums/new' => "albums#new", as: 'users_albums_new'
 
+  post '/sessions' => "sessions#create"
+
+  get '/sessions' => "sessions#new"
+
+  root "sessions#new"
+
 end
