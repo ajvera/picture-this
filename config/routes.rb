@@ -2,15 +2,10 @@ Rails.application.routes.draw do
 
   root "sessions#new"
 
-  get 'users/new' => "users#new"
-
-  post 'users' => "users#create"
-
-  get 'users/:id' => "users#show"
-
-  post '/sessions' => "sessions#create"
+  resources :users, only: [:new, :create, :show]
 
   get '/sessions' => "sessions#new"
 
+  post '/sessions' => "sessions#create"
 
 end
