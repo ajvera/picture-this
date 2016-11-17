@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
   get 'users/:id' => "users#show"
 
-  root '/' => "sessions#new"
+  post '/sessions' => "sessions#create"
+
+  get '/sessions' => "sessions#new"
+
+  root "sessions#new"
 
 end
