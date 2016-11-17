@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 #Test navbar from home page, profile page, and views
 
