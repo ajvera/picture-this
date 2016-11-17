@@ -22,7 +22,7 @@
         <li><%= link_to_if(current_user.nil?, "Login", users_new_path)  %></li>
         <li><%= link_to_if(current_user.nil?, "Register", sessions_new_path)  %></li>
         <li><%= link_to_if(current_user, "current_user.username", users_path) %></li>
-        <li><%= link_to_if(current_user, "Logout", sessions_delete_path) %></li>
+        <li><%= link_to_if(current_user, "Logout", sessions_delete_path, method: :delete) %></li>
       </ul>
     </div>
   </div>

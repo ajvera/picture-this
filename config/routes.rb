@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get '/sessions' => "sessions#new"
 
+
+
   root "sessions#new"
 
 end
