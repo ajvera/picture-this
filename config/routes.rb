@@ -9,4 +9,10 @@ Rails.application.routes.draw do
 
   get 'sessions/new' => "sessions#new", as: 'sessions_new'
 
+  post '/sessions' => "sessions#create"
+
+  get '/sessions' => "sessions#new"
+
+  root "sessions#new"
+
 end
