@@ -1,0 +1,29 @@
+<div class="jumbotron">
+
+  <h2>Welcome <%= @user.username %>!</h2>
+
+  <h3>Your albums</h3>
+
+  <table class="table table-striped table-hover">
+  <% @user.albums.each do |album| %>
+    <thead>
+      <tr>
+        <th><%= album.name%></th>
+      </tr>
+    </thead>
+  <% end %>
+  <% @user.albums.each do |album| %>
+    <tbody>
+      <tr>
+        <td><%= album.pictures.first %></td>
+      </tr>
+    </tbody>
+  <% end %>
+  </table>
+
+  <button class="btn btn-primary btn-lg">
+    <%= link_to "Create new album", users_albums_new_path %>
+  </button>
+
+</div>
+
