@@ -1,21 +1,25 @@
-require 'rails-helper'
+require 'rails_helper'
+before :all do
+	User.destroy_all
+	User.create(first_name: "Aloe", last_name:"Vera", username:"alvera", email:"aloe@ve.ra",password:"password")
+end
 
 feature "visiting the homepage" do
   scenario "the user sees a login screen" do
+
     visit "/"
+    expect(page).to have_content('Email Password')
 
-    within(".recent-games") do
-      expect(page).to have_content most_recent_game.user_throw
-      click_link("Show")
-    end
-
-    expect(page).to have_current_path game_path(most_recent_game)
+    expect(page).to have_current_path(root_path)
   end
 
-  scenario "the user can login" do
+  xscenario "the user can login" do
     visit "/"
-    click_link("New Game")
-    expect(page).to have_current_path(new_game_path)
+    fill_in('Email', with: 'aloe@ve.ra')
+    fill_in('Password', with: 'password')
+    click_button("Login")
+
+    expect(page).to have_current_path()
 
   end
 end
