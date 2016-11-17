@@ -6,13 +6,16 @@
 
 
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/paper/bootstrap.min.css" rel="stylesheet" integrity="sha384-awusxf8AUojygHf2+joICySzB780jVvQaVCAt1clU3QsyAitLGul28Qxb2r1e5g+" crossorigin="anonymous">
-    
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-
+    <%= link_to_if(current_user.nil?, "Login", users_new_path)  %>
+    <%= link_to_if(current_user.nil?, "Register", sessions_new_path)  %>
+    <%= link_to_if(current_user, "current_user.username", users_show_path) %>
+    <%= link_to_if(current_user, "Logout", sessions_delete_path) %>
     <%= yield %>
   </body>
 </html>
