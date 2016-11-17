@@ -1,4 +1,4 @@
-require 'rails-helper'
+require 'rails_helper'
 
 feature "visiting the homepage" do
   scenario "the user sees a login screen" do
