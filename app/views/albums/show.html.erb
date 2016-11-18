@@ -4,6 +4,7 @@
     <div class="panel-body">
       <%= picture.image  %>
     </div>
+    <%= link_to 'Delete this photo', [picture.album, @album], method: :delete, data: {confirm: 'Are you sure that you would like to delete this picture?'} %>
   </div>
 <% end %>
 
