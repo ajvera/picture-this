@@ -1,26 +1,30 @@
 class AlbumsController < ApplicationController
-	
-	def new 
-		@album = Album.new	
+
+	def new
+		@album = Album.new
 	end
 
-	def create 
+	def create
+		puts "This is params"
+		p params
+		puts "This is album params"
 		p album_params
 
 		@album = Album.new(album_params)
-
+		@album.privatization(album_params[:private])
+		@album.user_id = current_user.id
 		if @album.save
 			redirect_to album_path(@album)
 		else
 			@errors = @album.errors.full_messages
 			render :new
-		end 
+		end
 
-	end 
+	end
 
 	def show
 		@album = Album.find_by(id: params[:id])
-	end 
+	end
 
 	private
 
@@ -28,4 +32,4 @@ class AlbumsController < ApplicationController
 		params.require(:album).permit(:name, :private)
 	end
 
-end 
+end
