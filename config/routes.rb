@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show]
   
   resources :albums do 
-  	resources :photos
+  	resources :pictures
   end 
   
 

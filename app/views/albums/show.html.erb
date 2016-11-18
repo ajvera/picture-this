@@ -11,14 +11,17 @@
 <div id="photo-preview">
 </div>
 
+
+
 <div class="form-spacing">
-  <p>Add a photo to your album</p>
-  <div class="form-group">
-    <%= form_for @album do |form| %>
-      <%= form.fields_for :pictures bootstrap_form_tag url: '/albums/<%= @album.id %>/photos/new' do |f| %>
-        <%= f.file_field :image %>
-        <%= f.submit 'Add photo' %>
-      <% end %>
-    <% end %>
-  </div>
+	<legend>Add photo to your album</legend>
+	<div class="form-group">
+<%= bootstrap_form_for(@album) do |f| %>
+	<%= f.fields_for :pictures do |pictures_form| %>
+		<%= pictures_form.text_field :kind %>
+		<%= pictures_form.file_field :image %>
+		<%= f.submit %>
+	<% end %>
+<% end %>
+</div>
 </div>

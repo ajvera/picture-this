@@ -29,6 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'aws-sdk'
 gem 'aws-sdk-rails'
+gem 'dotenv-rails', :groups => [:developtment, :test]
 gem 'bootstrap_form'
 
 # gem 'capistrano-rails', group: :development
