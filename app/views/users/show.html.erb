@@ -9,7 +9,7 @@
       <div class="panel-heading"><%= album.name %></div>
       <div class="panel-body">
         <% if album.pictures %>
-        <%= album.pictures.first %>
+        <%= image_tag album.pictures.first.image.url(:small) %>
         <% else %>
         <%= image_tag "flowers-picture.jpeg" %>
         <% end %>
