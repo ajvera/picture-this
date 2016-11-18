@@ -11,7 +11,8 @@ class PicturesController < ApplicationController
 		if @picture.save
 			redirect_to album_path(Album.find_by(id: params[:album_id]))
 		else
-      p "something"
+			@errors = @picture.errors.full_messages
+      render "albums/show"
 		end
 	end 
 

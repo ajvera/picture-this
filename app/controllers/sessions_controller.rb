@@ -8,6 +8,8 @@ class SessionsController < ApplicationController
       if user.authenticate(params[:password])
         session[:current_user_id] = user.id
         redirect_to user_path(user)
+      else
+        render :new, :notice => "Email and password combination not found."
       end
     end
 
