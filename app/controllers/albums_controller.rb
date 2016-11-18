@@ -18,8 +18,6 @@ class AlbumsController < ApplicationController
 	end 
 
 	def show
-		p params
-		p "*****************"
 		@album = Album.find_by(id: params[:id])
 	end 
 
