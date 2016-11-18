@@ -2,11 +2,14 @@
 <% @album.pictures.each do |picture| %>
   <div class="panel panel-default">
     <div class="panel-body">
-      <%= picture.image  %>
+      <%= picture.image %>
     </div>
     <%= link_to 'Delete this photo', [picture.album, @album], method: :delete, data: {confirm: 'Are you sure that you would like to delete this picture?'} %>
   </div>
 <% end %>
+
+<div id="photo-preview">
+</div>
 
 <div class="form-spacing">
   <p>Add a photo to your album</p>
