@@ -1,12 +1,17 @@
-<div class="form-spacing">
+<div id="carousel">
+
+<div class="form-spacing opaque">
 
 	<div class="form-group">
 		<%= bootstrap_form_tag url: '/sessions' do |f| %>
+      <div class="non-opaque">
 		  <%= f.email_field :email %>
-		  <%= f.password_field :password %>
-		  <%= f.submit 'Login' %>
+      <%= f.password_field :password %>
+      <%= f.submit 'Login' %>
+      </div>
 		<% end %>
 	</div>
-	
+
+  </div>
 </div>
 
