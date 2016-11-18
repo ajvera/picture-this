@@ -16,11 +16,11 @@
 
 
 .form-spacing {
+  opacity:0.95;
+  padding: 25px;
 	display: block;
-	margin: 20% auto;
+	margin: 10% auto;
 	max-width: 30%;
+  background-color: white;
 }
 
-.white-text {
-  color:white;
-}

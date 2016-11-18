@@ -1,0 +1,23 @@
+@keyframes carousel {
+  0%  {background-image: url("https://static.ijr.com/wp-content/uploads/2014/05/baby_koala_blanket.jpg");
+background-size: 800px 500px;}
+  15%  {background-image: url("https://static.ijr.com/wp-content/uploads/2014/05/baby_koala_blanket.jpg");
+  background-size: 800px 500px;}
+  50% {background-image: url("http://cosmouk.cdnds.net/15/31/1600x800/landscape-1438173668-cute-success-kid.jpg");
+background-size: 800px 500px;}
+  75% {background-image: url("http://www.hansonrobotics.com/wp-content/uploads/2013/02/robot.jpg");
+background-size: 800px 500px;}
+  100%  {background-image: url("https://static.ijr.com/wp-content/uploads/2014/05/baby_koala_blanket.jpg");
+background-size: 800px 500px;}
+}
+#carousel {
+  padding:10px;
+  max-height:500px;
+  max-width: 800px;
+  margin:auto;
+  animation-name:carousel;
+  animation-timing-function: ease-in;
+  animation-duration:12s;
+  animation-iteration-count: infinite;
+}
+
