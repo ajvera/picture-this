@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-context "visiting the registration page" do 
-	
-	before :all do 
-		User.destroy_all
-	end 
+context "visiting the registration page" do
 
-		scenario "the user registers and is redirected to their profile page" do 
+	before :all do
+		User.destroy_all
+	end
+
+		scenario "the user registers and is redirected to the login page" do
 
 
 			visit "/users/new"
@@ -19,13 +19,13 @@ context "visiting the registration page" do
 
 			click_button 'Create User'
 
-			expect(page).to have_current_path user_path(User.last)
+			expect(page).to have_current_path root_path
 
-		end 
-	end 
+		end
+	end
 
-	context "when user registration fails" do 
-		scenario "when user does not supply all necessary fields for registration" do 
+	context "when user registration fails" do
+		scenario "when user does not supply all necessary fields for registration" do
 			user = User.new(first_name: "bar", last_name: "foo", password: "password")
 
 			visit "/users/new"
@@ -34,7 +34,7 @@ context "visiting the registration page" do
 
 			expect(page).to have_text("can't be blank")
 
-		end 
-	end 
+		end
+	end
 
 
