@@ -2,9 +2,9 @@
 <% @album.pictures.each do |picture| %>
   <div class="panel panel-default">
     <div class="panel-body">
-      <%= picture.image %>
+      <%= image_tag picture.image.url(:large) %>
     </div>
-    <%= link_to 'Delete this photo', [picture.album, @album], method: :delete, data: {confirm: 'Are you sure that you would like to delete this picture?'} %>
+  <!--   link_to 'Delete this photo', [picture.album, @album], method: :delete, data: {confirm: 'Are you sure that you would like to delete this picture?'}  -->
   </div>
 <% end %>
 
