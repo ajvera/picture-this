@@ -1,12 +1,12 @@
 <h2><%= @album.name %></h2>
-<% @album.pictures.each do |picture| %>
   <div class="panel panel-default">
     <div class="panel-body">
-      <%= image_tag picture.image.url(:large) %>
-    </div>
+		<% @album.pictures.each do |picture| %>
+		      <%= image_tag picture.image.url(:large) %>
   <!--   link_to 'Delete this photo', [picture.album, @album], method: :delete, data: {confirm: 'Are you sure that you would like to delete this picture?'}  -->
+		<% end %>
+    </div>
   </div>
-<% end %>
 
 <div id="photo-preview">
 </div>
