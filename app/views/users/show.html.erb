@@ -5,20 +5,20 @@
   <h3>Your albums</h3>
 
   <% @user.albums.each do |album| %>
-  <div class="panel panel-default">
-    <div class="panel-heading"><%= album.name %></div>
-    <div class="panel-body">
-      <% if album.pictures %>
-      <%= album.pictures.first %>
-      <% else %>
-      <%= image_tag "flowers-picture.jpeg" %>
-      <% end %>
+    <div class="panel panel-default">
+      <div class="panel-heading"><%= album.name %></div>
+      <div class="panel-body">
+        <% if album.pictures %>
+        <%= album.pictures.first %>
+        <% else %>
+        <%= image_tag "flowers-picture.jpeg" %>
+        <% end %>
+      </div>
     </div>
-  </div>
   <% end %>
 
   <button class="btn btn-primary btn-lg">
-    <%= link_to "Create new album", new_user_album_path(@user) %>
+    <%= link_to "Create new album", new_album_path %>
   </button>
 
 </div>

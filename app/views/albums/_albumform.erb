@@ -1,0 +1,12 @@
+<div class="form-spacing">
+	<legend>New Album:</legend>
+
+	<div class="form-group">
+		<%= bootstrap_form_for(@album) do |f| %>
+			<!-- f.hidden_field :user_id, value: current_user  -->
+		  <%= f.text_field :name %>
+		  <%= f.check_box :private %>
+		  <%= f.submit %>
+		<% end %>
+	</div>
+</div>
