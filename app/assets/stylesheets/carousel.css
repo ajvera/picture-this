@@ -13,11 +13,26 @@ background-size: 800px 500px;}
 #carousel {
   padding:10px;
   max-height:500px;
+  min-height: 500px;
+  min-width: 800px;
   max-width: 800px;
   margin:auto;
   animation-name:carousel;
   animation-timing-function: ease-in;
   animation-duration:12s;
   animation-iteration-count: infinite;
+}
+.nav-head {
+  margin-left: -15px;
+  color: #666666;
+  font-size: 24px;
+  float: left;
+  padding: 20.5px 15px;
+  line-height: 23px;
+  height: 64px;
+  transition: all 0.2s;
+  text-decoration: none;
+  background-color: transparent;
+  box-sizing: border-box;
 }
 
