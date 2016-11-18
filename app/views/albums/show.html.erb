@@ -1,0 +1,24 @@
+<h2><%= @album.name %></h2>
+<% @album.pictures.each do |picture| %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <%= picture.image %>
+    </div>
+    <%= link_to 'Delete this photo', [picture.album, @album], method: :delete, data: {confirm: 'Are you sure that you would like to delete this picture?'} %>
+  </div>
+<% end %>
+
+<div id="photo-preview">
+</div>
+
+<div class="form-spacing">
+  <p>Add a photo to your album</p>
+  <div class="form-group">
+    <%= form_for @album do |form| %>
+      <%= form.fields_for :pictures bootstrap_form_tag url: '/albums/<%= @album.id %>/photos/new' do |f| %>
+        <%= f.file_field :image %>
+        <%= f.submit 'Add photo' %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
