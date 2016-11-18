@@ -4,20 +4,23 @@
 
   <h3>Your albums</h3>
 
-  <% @user.albums.each do |album| %>
-    <div class="panel panel-default">
-      <div class="panel-heading"><a href="/albums/<%=album.id%>"><%= album.name %></a></div>
-      <div class="panel-body">
+  <% @array.each do |row| %>
+    <% row.compact.each do |album| %>
+      <div class="btn btn-link">
+      <a href="/albums/<%=album.id%>"><%= album.name %></a>
+      <div class="btn btn-link">
         <% if !album.pictures.empty? %>
         <%= image_tag album.pictures.first.image.url(:med) %>
         <% else %>
         <%= image_tag("flowers-picture.jpeg") %>
         <% end %>
+        </div>      
       </div>
-    </div>
+    <% end %>
   <% end %>
-
-    <%= link_to "Create new album", new_album_path, :class => "btn btn-primary" %>
-
 </div>
+  <div class="panel"> 
+    <%= link_to "Create new album", new_album_path, :class => "btn btn-default btn-lg btn-block" %>
+  </div>
+
 

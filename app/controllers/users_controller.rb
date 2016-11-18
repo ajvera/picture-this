@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
+	include RowHelper
 
 	def index
 	end
 
 	def show
 	  @user = User.find_by(id:params[:id])
+		@array = []
+	  row_split(@user.albums)
 	end
 
 	def new
