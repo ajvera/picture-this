@@ -16,10 +16,11 @@ ActiveRecord::Schema.define(version: 20161117181248) do
   enable_extension "plpgsql"
 
   create_table "albums", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.integer  "user_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",                       null: false
+    t.integer  "user_id",                    null: false
+    t.boolean  "private",    default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "pictures", force: :cascade do |t|
