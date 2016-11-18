@@ -2,9 +2,9 @@
 <% @album.pictures.each do |picture| %>
   <div class="panel panel-default">
     <div class="panel-body">
-      <%= picture.image %>
+      <%= image_tag picture.image.url(:large) %>
     </div>
-    <%= link_to 'Delete this photo', [picture.album, @album], method: :delete, data: {confirm: 'Are you sure that you would like to delete this picture?'} %>
+  <!--   link_to 'Delete this photo', [picture.album, @album], method: :delete, data: {confirm: 'Are you sure that you would like to delete this picture?'}  -->
   </div>
 <% end %>
 
@@ -13,15 +13,4 @@
 
 
 
-<div class="form-spacing">
-	<legend>Add photo to your album</legend>
-	<div class="form-group">
-<%= bootstrap_form_for(@album) do |f| %>
-	<%= f.fields_for :pictures do |pictures_form| %>
-		<%= pictures_form.text_field :kind %>
-		<%= pictures_form.file_field :image %>
-		<%= f.submit %>
-	<% end %>
-<% end %>
-</div>
-</div>
+<%= render "pictures/newform" %>

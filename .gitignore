@@ -17,3 +17,7 @@
 .byebug_history
 
 .env
+
+aws.yml
+
+secrets.yml

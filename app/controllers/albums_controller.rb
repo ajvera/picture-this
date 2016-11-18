@@ -4,12 +4,8 @@ class AlbumsController < ApplicationController
 		@album = Album.new
 	end
 
-	def create
-		puts "This is params"
-		p params
-		puts "This is album params"
-		p album_params
 
+	def create 
 		@album = Album.new(album_params)
 		@album.privatization(album_params[:private])
 		@album.user_id = current_user.id

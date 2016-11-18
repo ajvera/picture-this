@@ -3,10 +3,9 @@
 <div class="form-spacing">
 	<legend>Upload photos:</legend>
 	<div class="form-group">
-		
-		<%= bootstrap_form_for(@picture) do |f| %>
+		<%= bootstrap_form_tag(url: "/albums/#{@album.id}/pictures")  do |f|%>
 			<%= f.file_field :image %>
-			<%= f.hidden_field :album_id, value: params[:album_id] %>
+			<%= f.hidden_field :album_id, value: @album.id %>
 			<%= f.submit %>
 		<% end %>
 	</div>
