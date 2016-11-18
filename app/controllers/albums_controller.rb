@@ -5,7 +5,6 @@ class AlbumsController < ApplicationController
 	end
 
 	def create 
-		p album_params
 
 		@album = Album.new(album_params)
 
@@ -19,6 +18,8 @@ class AlbumsController < ApplicationController
 	end 
 
 	def show
+		p params
+		p "*****************"
 		@album = Album.find_by(id: params[:id])
 	end 
 

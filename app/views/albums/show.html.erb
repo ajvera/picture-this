@@ -13,15 +13,4 @@
 
 
 
-<div class="form-spacing">
-	<legend>Add photo to your album</legend>
-	<div class="form-group">
-<%= bootstrap_form_for(@album) do |f| %>
-	<%= f.fields_for :pictures do |pictures_form| %>
-		<%= pictures_form.text_field :kind %>
-		<%= pictures_form.file_field :image %>
-		<%= f.submit %>
-	<% end %>
-<% end %>
-</div>
-</div>
+<%= render "pictures/newform" %>
