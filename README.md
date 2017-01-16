@@ -20,7 +20,7 @@ Picture this is currently deployed via Heroku and can be viewed [here](https://p
 ##Dependencies
 Ruby on Rails
 Bootstrap paper theme
-AWS/3S
+AWS/S3
 
 ##Configuration Instructions
 n/a
